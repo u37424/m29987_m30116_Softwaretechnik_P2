@@ -3,14 +3,14 @@
  *
  * @version 1.0
  * <p>
- * This class analyses the given arguments and set them for the rest of the programm.
+ * This class analyses the given arguments and set them for the rest of the program.
  * </p>
  * @author: m30116 Sebastian Siebert
  * @author: m29887 Luca Joel Spirka
  */
 public class Analyzer {
     /**
-     * Checks if the programm works with the given arguments.
+     * Checks if the program works with the given arguments.
      * @param args given arguments
      */
     public static void checkArgs(String[] args) {
@@ -30,7 +30,7 @@ public class Analyzer {
     }
 
     /**
-     * Checks if there is a path with a filename given; otherwise the filename in defaulft.txt.
+     * Checks if there is a path with a filename given; otherwise the filename in default.txt.
      * @param args given arguments
      */
     public static void setPath(String[] args) {

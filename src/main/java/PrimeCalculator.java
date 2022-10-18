@@ -4,7 +4,7 @@ import java.util.LinkedList;
  *
  * @version 1.0
  * <p>
- * This class calculates every primenumber until the wanted number of primes is reached.
+ * This class calculates every prime number until the wanted number of primes is reached.
  * </p>
  * @author: m30116 Sebastian Siebert
  * @author: m29887 Luca Joel Spirka
@@ -26,11 +26,11 @@ public class PrimeCalculator {
     }
 
     /**
-     * This method checks if the incoming number is a primenumber or not.
+     * This method checks if the incoming number is a prime number or not.
      * @param current current number to check
-     * @return if the number is a primenumber or not
+     * @return if the number is a prime number or not
      */
-    private static boolean isPrime(int current) {
+    public static boolean isPrime(int current) {
         for (int i = 2; i <= current / 2; ++i) {
             if (current % i == 0) {
                 return false;
@@ -44,6 +44,7 @@ public class PrimeCalculator {
      * @param amount amount of primes
      */
     public static void setAmount(int amount) {
+        assert amount >= 0 : "No Valid Amount.";
         PrimeCalculator.amount = amount;
     }
 
