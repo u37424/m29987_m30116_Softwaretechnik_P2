@@ -27,7 +27,7 @@ public class PrimeWriter {
             }
             writer.flush();
         } catch (IOException e){
-
+            System.err.println("Error during the writing process.");
         }
     }
 }
