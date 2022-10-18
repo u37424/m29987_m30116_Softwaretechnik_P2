@@ -1,6 +1,5 @@
 /**
  * AWT-DEMO 2022
- *
  * @version 1.0
  * <p>
  * This class analyses the given arguments and set them for the rest of the programm.
