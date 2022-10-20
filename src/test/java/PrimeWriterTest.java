@@ -1,7 +1,4 @@
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -86,8 +83,8 @@ class PrimeWriterTest {
         }
     }
 
-    @AfterAll
-    static void afterAll() {
+    @AfterEach
+    void tearDown() {
         try {
             Files.deleteIfExists(Path.of(testPath));
             assertTrue(!Files.exists(Path.of(testPath)));
