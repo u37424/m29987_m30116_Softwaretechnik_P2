@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.LinkedList;
@@ -23,8 +24,19 @@ class PrimeCalculatorTest {
         amount = 0;
     }
 
+    @BeforeEach
+    void setUp() {
+        PrimeCalculator.setAmount(amount);
+    }
+
     @Test
     void calculatePrimes() {
+        assertTrue(PrimeCalculator.getPRIMES().size() == 0);
+        PrimeCalculator.calculatePrimes();
+        assertTrue(PrimeCalculator.getPRIMES().size() == amount);
+        for (int prime : PrimeCalculator.getPRIMES()) {
+            assertTrue(PrimeCalculator.isPrime(prime));
+        }
     }
 
     @Test
@@ -37,20 +49,17 @@ class PrimeCalculatorTest {
 
     @Test
     void setAmount() {
-        PrimeCalculator.setAmount(amount);
         assertTrue(PrimeCalculator.getAmount() == amount);
         assertThrows(AssertionError.class, () -> PrimeCalculator.setAmount(-2));
     }
 
     @Test
     void getAmount() {
-        PrimeCalculator.setAmount(amount);
         assertTrue(PrimeCalculator.getAmount() == amount);
     }
 
     @Test
     void getPRIMES() {
-        PrimeCalculator.setAmount(amount);
         PrimeCalculator.calculatePrimes();
         assertTrue(PrimeCalculator.getPRIMES().size() == amount);
         PrimeCalculator.setAmount(0);

@@ -41,8 +41,9 @@ public class PrimeWriter {
 
     /**
      * Writes all the calculated primes into the file.
+     * @return if the task has succeeded od failed.
      */
-    public static void writePrimes() {
+    public static boolean writePrimes() {
         try {
             FileWriter writer = new FileWriter(getPath());
             LinkedList<Integer> primes = PrimeCalculator.getPRIMES();
@@ -51,8 +52,10 @@ public class PrimeWriter {
                 writer.write(prime + " ");
             }
             writer.flush();
+            return true;
         } catch (IOException e) {
             System.err.println("Error during the writing process.");
         }
+        return false;
     }
 }

@@ -10,7 +10,7 @@
  */
 public class Application {
     /**
-     * Activates all the other parts of the program and coordinates when the tasks starts.
+     * Activates all the other parts of the program and coordinates when the tasks run.
      * @param args given arguments
      */
     public static void main(String[] args) {
@@ -18,7 +18,7 @@ public class Application {
         System.out.println("Analyzed arguments.");
         PrimeCalculator.calculatePrimes();
         System.out.println("Calculated Primes.");
-        PrimeWriter.writePrimes();
-        System.out.println("Written to File.");
+        if(PrimeWriter.writePrimes()) System.out.println("Written to File.");
+        else System.out.println("Failed to Write.");
     }
 }
